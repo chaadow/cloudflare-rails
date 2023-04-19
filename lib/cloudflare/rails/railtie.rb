@@ -102,7 +102,7 @@ module Cloudflare
         app.config.cloudflare.reverse_merge! DEFAULTS
       end
 
-      initializer "my_railtie.configure_rails_initialization" do
+      initializer "cloudflare_rails.configure_rails_initialization" do
         Rack::Request::Helpers.prepend CheckTrustedProxies
 
         ObjectSpace.each_object(Class).
